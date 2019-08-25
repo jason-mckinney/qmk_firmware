@@ -73,3 +73,7 @@ id_rsa_*
 
 # python things
 __pycache__
+
+#mdloader
+mdloader_windows.exe
+flash.bat

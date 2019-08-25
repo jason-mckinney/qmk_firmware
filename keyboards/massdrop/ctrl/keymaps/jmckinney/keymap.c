@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "keyutil.h"
 
 enum ctrl_keycodes {
     U_T_AUTO = SAFE_RANGE, //USB Extra Port Toggle Auto Detect / Always Active
@@ -9,6 +10,8 @@ enum ctrl_keycodes {
     DBG_MOU,               //DEBUG Toggle Mouse Prints
     MD_BOOT,               //Restart into bootloader after hold timeout
 };
+
+uint8_t layer = 0;
 
 #define TG_NKRO MAGIC_TOGGLE_NKRO //Toggle 6KRO / NKRO mode
 
@@ -134,4 +137,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         default:
             return true; //Process all other keycodes normally
     }
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch(get_highest_layer(state)) {
+        case 1:
+            layer = 1;
+            break;
+        default:
+            layer = 0;
+        break;
+    }
+    
+    return state;
 }
