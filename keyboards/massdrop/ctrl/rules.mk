@@ -32,5 +32,8 @@ VIRTSER_ENABLE = no         # USB Serial Driver
 RAW_ENABLE = no             # Raw device
 AUTO_SHIFT_ENABLE = no      # Auto Shift
 
+# custom effects
+RGB_MATRIX_CUSTOM_USER = yes
+
 # Custom RGB matrix handling
 RGB_MATRIX_ENABLE = custom
