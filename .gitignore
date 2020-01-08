@@ -76,4 +76,5 @@ __pycache__
 
 #mdloader
 mdloader_windows.exe
+mdloader_linux
 flash.bat
